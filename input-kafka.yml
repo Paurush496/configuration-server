@@ -1,0 +1,27 @@
+# spring.application.name = input-kafka
+# management.security.enabled=false
+
+# #tells about the Eureka server details and its refresh time
+# eureka.client.service-url.defaultZone= http://localhost:8066/eureka/
+# eureka.client.register-with-eureka= true
+# eureka.client.fetch-registry= true
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: input-kafka
+
+eureka:         #tells about the Eureka server details and its refresh time
+    instance:
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 2
+    client:
+        serviceUrl:
+            defaultZone: http://127.0.0.1:8066/eureka/
+        healthcheck:
+            enabled: true
+        lease:
+            duration: 5
